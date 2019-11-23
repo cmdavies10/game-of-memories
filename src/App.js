@@ -4,17 +4,38 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import Wrapper from "./components/Wrapper";
+import Score from "./components/Score";
 import characters from "./characters.json";
 
 class App extends React.Component {
+	state = {
+		characters: characters,
+		pickedCharacters: [],
+		topScore: 0,
+		alertMessage: ""
+	};
+
 	render() {
 		const images = characters.map(characters => (
-			<Main image={characters.image} />
+			<Main
+				id={characters.id}
+				image={characters.image}
+				key={characters.id}
+				handlePicked={this.handlePicked}
+			/>
 		));
 		return (
-			<div>
-				<Navbar />
-				<Wrapper>{images}</Wrapper>
+			<div className="wrapper">
+				<Navbar
+					clickMessage={this.state.pickedCharacters}
+					topScore={this.state.topScore}
+					alertMessage={this.state.alertMessage}
+					style={{ color: "white" }}
+				/>
+				<Score />
+				<div className="container">
+					<div className="row">{images}</div>
+				</div>
 			</div>
 		);
 	}

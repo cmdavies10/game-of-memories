@@ -7,7 +7,12 @@
 	background: #1c1f4b;
 	height: 60px;
 	font-family: "Rubik", sans-serif;
+	/* color: white; */
 }
+
+/* .navbar-brand .navbar-light {
+	color: white;
+} */
 
 .navbar ul {
 	margin: 0;
