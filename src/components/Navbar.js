@@ -10,9 +10,9 @@ function NavbarComponent() {
 			<Container>
 				<Navbar>
 					<a className="navbar-brand" href="#">
-						GoM
+						Game of Memories
 					</a>
-					<a className="nav-item nav-link" href="/">
+					{/* <a className="nav-item nav-link" href="/">
 						Link
 					</a>
 					<a className="nav-item nav-link" href="/">
@@ -20,7 +20,7 @@ function NavbarComponent() {
 					</a>
 					<a className="nav-item nav-link" href="/">
 						Link
-					</a>
+					</a> */}
 				</Navbar>
 			</Container>
 		</div>

@@ -2,20 +2,22 @@ import React from "react";
 // import Header from "./components/Header";
 // import Section from "./components/Section";
 import Navbar from "./components/Navbar";
-import Container from "react-bootstrap/Container";
+import Main from "./components/Main";
+import Wrapper from "./components/Wrapper";
+import characters from "./characters.json";
 
-function App() {
-	return (
-		<div>
-			<Navbar />
-			<Container>
-				<h1>TEST</h1>
-				<h2>TEST</h2>
-				<h3>TEST</h3>
-				<h4>TEST</h4>
-			</Container>
-		</div>
-	);
+class App extends React.Component {
+	render() {
+		const images = characters.map(characters => (
+			<Main image={characters.image} />
+		));
+		return (
+			<div>
+				<Navbar />
+				<Wrapper>{images}</Wrapper>
+			</div>
+		);
+	}
 }
 
 export default App;
