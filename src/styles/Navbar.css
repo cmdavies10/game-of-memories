@@ -1,0 +1,26 @@
+/* @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap"); */
+@import url(https://fonts.googleapis.com/css?family=Rubik);
+
+/* $font-stack: "Montserrat", sans-serif; */
+
+.navbar {
+	background: #1c1f4b;
+	height: 60px;
+	font-family: "Rubik", sans-serif;
+}
+
+.navbar ul {
+	margin: 0;
+}
+
+.navbar li {
+	display: inline-block;
+}
+
+.navbar a {
+	color: white;
+	font-size: 1.3rem;
+	text-decoration: none;
+	margin: 5px;
+	line-height: 3;
+}
