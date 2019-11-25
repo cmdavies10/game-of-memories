@@ -9,9 +9,15 @@ const styles = {
 // card layout in grid with onClick
 function Main(props) {
 	return (
-		<div className="col-3" onClick={() => props.handleClick(props.id)}>
+		<div className="col-3">
 			<div className="img-container">
-				<img src={props.image} alt="" style={styles}></img>
+				<img
+					onClick={props.handleClick}
+					name={props.name}
+					src={props.image}
+					alt=""
+					style={styles}
+				></img>
 			</div>
 		</div>
 	);

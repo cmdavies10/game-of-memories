@@ -5,7 +5,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 function Score(props) {
 	return (
 		<div className="container">
-			<Jumbotron className="text-center">INSERT SCORE COUNTER</Jumbotron>
+			<Jumbotron className="text-center">{props.children}</Jumbotron>
 		</div>
 	);
 }

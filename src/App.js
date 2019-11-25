@@ -7,6 +7,10 @@ import Main from "./components/Main";
 import Score from "./components/Score";
 import characters from "./characters.json";
 
+// function shuffle(array) {
+// 	array.sort(() => Math.random() - 0.5);
+// }
+
 class App extends React.Component {
 	state = {
 		characters: characters,
@@ -15,14 +19,26 @@ class App extends React.Component {
 		alertMessage: ""
 	};
 
-	handleClick = () => {
-		alert("working");
+	// shuffle = array => {
+	// 	array.sort(() => Math.random() - 0.5);
+	// };
+
+	handleClick = event => {
+		// const newState = { ...this.state };
+		const name = event.target.attributes.getNamedItem("name").value;
+		alert("Name: " + name);
+		// const images = this.state.characters;
+		// const clickedImage = images.filter((characters) => characters.id === id)
+		// this.setState(
+		// 	(this.state.characters = this.shuffle(this.state.characters))
+		// );
 	};
 
 	render() {
 		const images = characters.map(characters => (
 			<Main
 				id={characters.id}
+				name={characters.name}
 				image={characters.image}
 				key={characters.id}
 				handleClick={this.handleClick}
@@ -35,7 +51,7 @@ class App extends React.Component {
 					topScore={this.state.topScore}
 					alertMessage={this.state.alertMessage}
 				/>
-				<Score />
+				<Score>INSERT SCORE COUNTER HERE</Score>
 				<div className="container">
 					<div className="row">{images}</div>
 				</div>
