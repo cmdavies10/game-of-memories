@@ -3,7 +3,7 @@ import React from "react";
 // import Section from "./components/Section";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
-import Wrapper from "./components/Wrapper";
+// import Wrapper from "./components/Wrapper";
 import Score from "./components/Score";
 import characters from "./characters.json";
 
@@ -15,13 +15,17 @@ class App extends React.Component {
 		alertMessage: ""
 	};
 
+	handleClick = () => {
+		alert("working");
+	};
+
 	render() {
 		const images = characters.map(characters => (
 			<Main
 				id={characters.id}
 				image={characters.image}
 				key={characters.id}
-				handlePicked={this.handlePicked}
+				handleClick={this.handleClick}
 			/>
 		));
 		return (
@@ -30,7 +34,6 @@ class App extends React.Component {
 					clickMessage={this.state.pickedCharacters}
 					topScore={this.state.topScore}
 					alertMessage={this.state.alertMessage}
-					style={{ color: "white" }}
 				/>
 				<Score />
 				<div className="container">
