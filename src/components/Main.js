@@ -14,6 +14,8 @@ function Main(props) {
 				<img
 					onClick={props.handleClick}
 					name={props.name}
+					id={props.id}
+					value={props.value}
 					src={props.image}
 					alt=""
 					style={styles}
