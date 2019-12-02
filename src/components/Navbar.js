@@ -1,17 +1,32 @@
 import React from "react";
-import "../styles/Style.css";
-import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
-// import Jumbotron from "react-bootstrap/Jumbotron";
 
-function NavbarComponent() {
+function Navbar(props) {
 	return (
-		<div>
-			<Container>
-				<Navbar className="text-white">Game of Memories</Navbar>
-			</Container>
+		<div className="wrapper">
+			<nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+				<a className="navbar-brand" href="/">
+					<strong>Clicky Game</strong>
+				</a>
+				<div className="navbar-nav mx-auto">
+					<ul>
+						<strong>{props.clickMessage}</strong>
+					</ul>
+				</div>
+				<div className="navbar-nav ml-auto">
+					<ul>
+						<strong>
+							<li>Score: {props.correctGuesses}</li>
+							<li>Top Score: {props.topScore}</li>
+						</strong>
+					</ul>
+				</div>
+			</nav>
+			<div className="jumbotron">
+				Clicky Game! Click on image to earn points, but don't click on
+				any more than once!
+			</div>
 		</div>
 	);
 }
 
-export default NavbarComponent;
+export default Navbar;

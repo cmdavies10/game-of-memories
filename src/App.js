@@ -1,100 +1,96 @@
 import React from "react";
-// import Header from "./components/Header";
-// import Section from "./components/Section";
-import Navbar from "./components/Navbar";
-import Main from "./components/Main";
-// import Wrapper from "./components/Wrapper";
-import Score from "./components/Score";
-import characters from "./characters.json";
+import "./App.css";
+import Navbar from "./component/Navbar";
+import images from "./images.json";
+import Main from "./component/Main";
 
-// function shuffle(array) {
-// 	array.sort(() => Math.random() - 0.5);
-// }
+let correctGuesses = 0;
+let topScore = 0;
+let alertMessage = "";
 
-// function shuffle(array) {
-// 	var m = array.length,
-// 		t,
-// 		i;
-
-// 	// While there remain elements to shuffle…
-// 	while (m) {
-// 		// Pick a remaining element…
-// 		i = Math.floor(Math.random() * m--);
-
-// 		// And swap it with the current element.
-// 		t = array[m];
-// 		array[m] = array[i];
-// 		array[i] = t;
-// 	}
-
-// 	return array;
-// }
+function shuffle(array) {
+	array.sort(() => Math.random() - 0.5);
+}
 
 class App extends React.Component {
 	state = {
-		characters: characters,
-		pickedCharacters: [],
-		topScore: 0,
-		alertMessage: "",
-		correctGuesses: 0
+		images,
+		alertMessage,
+		topScore,
+		correctGuesses
 	};
 
-	// shuffle = array => {
-	// 	array.sort(() => Math.random() - 0.5);
-	// };
+	handleClick = id => {
+		const images = this.state.images;
 
-	handleClick = event => {
-		const newState = { ...this.state };
-		// newState.pickedCharacters.push(this.state.characters.id);
-		// const clicked = event.target.attributes.getNamedItem("value").value;
-		const clicked = event.target.attributes.getNamedItem("id").value;
-		// alert("Clicked: " + clicked);
-		newState.pickedCharacters.push(clicked);
-		// this.setState({ pickedCharacters: clicked });
-		console.log(newState.pickedCharacters);
+		const clickedImage = images.filter(image => image.id === id);
 
-		if (!newState.pickedCharacters.includes(clicked)) {
-			newState.correctGuesses++;
-			newState.alertMessage = "Good Choice";
-			console.log(newState.alertMessage);
-			newState.pickedCharacters.push(clicked);
-			this.setState((this.state = newState));
-			console.log(newState.correctGuesses);
+		if (clickedImage[0].clicked) {
+			correctGuesses = 0;
+			alertMessage = "Incorrect Guess";
+
+			for (let i = 0; i < images.length; i++) {
+				images[i].clicked = false;
+			}
+
+			this.setState({ alertMessage });
+			this.setState({ correctGuesses });
+			this.setState({ images });
+		} else if (correctGuesses < 11) {
+			clickedImage[0].clicked = true;
+
+			correctGuesses++;
+
+			alertMessage = "Correct Guess";
+
+			if (correctGuesses > topScore) {
+				topScore = correctGuesses;
+				this.setState({ topScore });
+			}
+
+			shuffle(images);
+
+			this.setState({ images });
+			this.setState({ correctGuesses });
+			this.setState({ alertMessage });
+		} else {
+			clickedImage[0].clicked = true;
+
+			correctGuesses = 0;
+			alertMessage = "WINNER!";
+			topScore = 12;
+			this.setState({ topScore });
+
+			for (let i = 0; i < images.length; i++) {
+				images[i].clicked = false;
+			}
+
+			shuffle(images);
+
+			this.setState({ images });
+			this.setState({ correctGuesses });
+			this.setState({ alertMessage });
 		}
-		// else {
-		// 	newState.correctGuesses++;
-		// 	newState.pickedCharacters.push(clicked);
-		// 	newState.alertMessage = "Good Choice";
-		// 	this.setState((this.state = newState));
-		// }
-
-		// const images = this.state.characters;
-		// const characters = this.state.characters.filter(
-		// 	character => characters.id === id
-		// );
 	};
 
 	render() {
-		const images = characters.map(characters => (
+		const imgList = this.state.images.map(image => (
 			<Main
-				id={characters.id}
-				name={characters.name}
-				value={characters.clicked}
-				image={characters.image}
-				key={characters.id}
+				id={image.id}
+				image={image.image}
+				key={image.id}
 				handleClick={this.handleClick}
 			/>
 		));
 		return (
 			<div className="wrapper">
 				<Navbar
-					clickMessage={this.state.pickedCharacters}
-					topScore={this.state.topScore}
 					alertMessage={this.state.alertMessage}
+					topScore={this.state.topScore}
+					correctGuesses={this.state.correctGuesses}
 				/>
-				<Score>INSERT SCORE COUNTER HERE</Score>
 				<div className="container">
-					<div className="row">{images}</div>
+					<div class="row">{imgList}</div>
 				</div>
 			</div>
 		);
