@@ -1,15 +1,15 @@
 import React from "react";
 import "../styles/Style.css";
-import Container from "react-bootstrap/Container";
+// import Container from "react-bootstrap/Container";
 
 function Navbar(props) {
 	return (
-		<div className="wrapper text-center">
-			<Container>
-				<nav className="navbar">
-					<h2>GoM | GAME OF MEMORIES</h2>
-				</nav>
-			</Container>
+		<div className="wrapper">
+			{/* <Container> */}
+			<nav className="navbar">
+				<h2>GoM | GAME OF MEMORIES</h2>
+			</nav>
+			{/* </Container> */}
 		</div>
 	);
 }
