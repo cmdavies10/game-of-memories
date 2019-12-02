@@ -9,7 +9,7 @@ function FooterComponent(props) {
 			<Container>
 				<br />
 				<hr />
-				<div className="footer text-center text-white-50">
+				<div className="footer text-center text-dark-50">
 					c.m. davies
 				</div>
 			</Container>
