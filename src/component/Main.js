@@ -3,7 +3,7 @@ import React from "react";
 const styles = {
 	width: 200,
 	height: 200,
-	padding: 15
+	padding: 10
 };
 
 function Main(props) {
