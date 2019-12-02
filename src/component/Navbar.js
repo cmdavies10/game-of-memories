@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 
 function Navbar(props) {
 	return (
-		<div className="wrapper">
+		<div className="wrapper text-center">
 			<Container>
 				<nav className="navbar">
 					<h2>Game of Memories</h2>

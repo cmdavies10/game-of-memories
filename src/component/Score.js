@@ -10,19 +10,19 @@ function Score(props) {
 	return (
 		<div className="container">
 			<Jumbotron
-				className="text-center bg-dark text-white"
+				className="text-center text-white bg-secondary"
 				styles={styles}
 			>
-				<h4>
+				<h3>
 					Test your memory skills by not choosing the same character
 					twice.
-				</h4>
+				</h3>
 				<hr />
-				<div style={{ color: "red" }}>
-					<h3>
-						Score: {props.correctGuesses} | Top Score:{" "}
+				<div style={{ color: "white" }}>
+					<h4>
+						Round Score: {props.correctGuesses} | High Score:{" "}
 						{props.topScore}
-					</h3>
+					</h4>
 				</div>
 			</Jumbotron>
 		</div>

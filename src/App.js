@@ -76,7 +76,7 @@ class App extends React.Component {
 	};
 
 	render() {
-		const imgList = this.state.images.map(image => (
+		const imgArray = this.state.images.map(image => (
 			<Main
 				id={image.id}
 				image={image.image}
@@ -85,7 +85,7 @@ class App extends React.Component {
 			/>
 		));
 		return (
-			<div className="wrapper bg-secondary">
+			<div className="wrapper" style={{ background: "black" }}>
 				<Navbar />
 				<Score
 					alertMessage={this.state.alertMessage}
@@ -93,7 +93,7 @@ class App extends React.Component {
 					correctGuesses={this.state.correctGuesses}
 				/>
 				<div className="container">
-					<div class="row">{imgList}</div>
+					<div class="row">{imgArray}</div>
 				</div>
 				<FooterComponent />
 			</div>
