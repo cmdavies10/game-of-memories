@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
-// import Navbar from "./component/Navbar";
+import Navbar from "./component/Navbar";
 import images from "./images.json";
 import Main from "./component/Main";
 import Score from "./component/Score";
+import FooterComponent from "./component/Footer";
 
 let correctGuesses = 0;
 let topScore = 0;
@@ -84,12 +85,8 @@ class App extends React.Component {
 			/>
 		));
 		return (
-			<div className="wrapper bg-secondary">
-				{/* <Navbar
-					alertMessage={this.state.alertMessage}
-					topScore={this.state.topScore}
-					correctGuesses={this.state.correctGuesses}
-				/> */}
+			<div className="wrapper bg-dark">
+				<Navbar />
 				<Score
 					alertMessage={this.state.alertMessage}
 					topScore={this.state.topScore}
@@ -98,6 +95,7 @@ class App extends React.Component {
 				<div className="container">
 					<div class="row">{imgList}</div>
 				</div>
+				<FooterComponent />
 			</div>
 		);
 	}

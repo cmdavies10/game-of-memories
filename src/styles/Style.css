@@ -24,3 +24,11 @@
 	margin: 5px;
 	line-height: 3;
 }
+
+.jumbotron {
+	padding: 5px;
+}
+
+.body {
+	padding: 10px;
+}
