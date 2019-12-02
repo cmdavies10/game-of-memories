@@ -10,11 +10,9 @@ function Score(props) {
 	return (
 		<div className="container">
 			<Jumbotron
-				className="text-center bg-info text-white"
+				className="text-center bg-dark text-white"
 				styles={styles}
 			>
-				<h2>GAME OF MEMORIES</h2>
-				<br />
 				<h4>
 					Test your memory skills by not choosing the same character
 					twice.

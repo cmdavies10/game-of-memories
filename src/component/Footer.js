@@ -7,11 +7,10 @@ function FooterComponent(props) {
 	return (
 		<div>
 			<Container>
-				<div className="text-center text-white-50">
-					<br />
-					<hr />
-					<br />
-					<p>C.M. Davies</p>
+				<br />
+				<hr />
+				<div className="footer text-center text-white-50">
+					c.m. davies
 				</div>
 			</Container>
 		</div>

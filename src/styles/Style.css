@@ -3,32 +3,31 @@
 
 .navbar {
 	background: #000333;
-	height: 60px;
+	height: 80px;
 	font-family: "Rubik", sans-serif;
 	text-align: center;
+	align-content: center;
+	color: white;
 	display: flexbox;
 }
 
-.navbar ul {
-	margin: 0;
-}
-
-.navbar li {
-	display: inline-block;
-}
-
-.navbar a {
-	color: white;
-	font-size: 1.3rem;
-	text-decoration: none;
-	margin: 5px;
-	line-height: 3;
+.wrapper {
+	text-align: center;
 }
 
 .jumbotron {
-	padding: 5px;
+	padding: 20px;
 }
 
 .body {
-	padding: 10px;
+	padding: 0px;
+	text-align: center;
+}
+
+.footer {
+	padding: 20px;
+}
+
+.img-container {
+	padding: 2px;
 }

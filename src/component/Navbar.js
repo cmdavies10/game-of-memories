@@ -6,8 +6,8 @@ function Navbar(props) {
 	return (
 		<div className="wrapper">
 			<Container>
-				<nav className="navbar text-white text-center">
-					<h2>GoT</h2>
+				<nav className="navbar">
+					<h2>Game of Memories</h2>
 				</nav>
 			</Container>
 		</div>
