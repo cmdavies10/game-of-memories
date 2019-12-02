@@ -13,10 +13,10 @@ function Score(props) {
 				className="text-center text-white bg-secondary"
 				styles={styles}
 			>
-				<h3>
+				<h5>
 					Test your memory skills by not choosing the same character
 					twice.
-				</h3>
+				</h5>
 				<hr />
 				<div style={{ color: "white" }}>
 					<h4>

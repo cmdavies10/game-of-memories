@@ -7,7 +7,7 @@ function Navbar(props) {
 		<div className="wrapper text-center">
 			<Container>
 				<nav className="navbar">
-					<h2>Game of Memories</h2>
+					<h2>GoM | GAME OF MEMORIES</h2>
 				</nav>
 			</Container>
 		</div>
