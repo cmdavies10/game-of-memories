@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./component/Navbar";
 import images from "./images.json";
 import Main from "./component/Main";
+import Score from "./component/Score";
 
 let correctGuesses = 0;
 let topScore = 0;
@@ -85,6 +86,11 @@ class App extends React.Component {
 		return (
 			<div className="wrapper">
 				<Navbar
+					alertMessage={this.state.alertMessage}
+					topScore={this.state.topScore}
+					correctGuesses={this.state.correctGuesses}
+				/>
+				<Score
 					alertMessage={this.state.alertMessage}
 					topScore={this.state.topScore}
 					correctGuesses={this.state.correctGuesses}

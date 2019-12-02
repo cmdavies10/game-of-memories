@@ -8,7 +8,7 @@ const styles = {
 function Body(props) {
 	return (
 		<div
-			className="card col-3"
+			className="col-3"
 			style={styles}
 			onClick={() => props.handleClick(props.id)}
 		>

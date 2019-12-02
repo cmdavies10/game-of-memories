@@ -2,13 +2,14 @@ import React from "react";
 
 const styles = {
 	width: 200,
-	height: 200
+	height: 200,
+	padding: 15
 };
 
 function Main(props) {
 	return (
 		<div
-			className="card col-3"
+			className="col-3"
 			style={styles}
 			onClick={() => props.handleClick(props.id)}
 		>
