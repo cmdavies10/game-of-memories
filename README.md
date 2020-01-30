@@ -8,4 +8,4 @@ Points are scored for each click of a character that has not yet been chosen, ho
 
 ### TECHNOLOGY USED
 
--   React, Javascript
+-   React, JavaScript, Bootstrap

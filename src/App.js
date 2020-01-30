@@ -85,7 +85,7 @@ class App extends React.Component {
 			/>
 		));
 		return (
-			<div className="wrapper" style={{ background: "#e6f5ff" }}>
+			<div className="wrapper" style={{ background: "#858687" }}>
 				<Navbar />
 				<Score
 					alertMessage={this.state.alertMessage}

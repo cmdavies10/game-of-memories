@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/Style.css";
 import Container from "react-bootstrap/Container";
-// import Footer from "react-bootstrap/Footer";
 
 function FooterComponent(props) {
 	return (
@@ -9,9 +8,7 @@ function FooterComponent(props) {
 			<Container>
 				<br />
 				<hr />
-				<div className="footer text-center text-dark-50">
-					c.m. davies
-				</div>
+				<div className="footer text-center">c.m. davies</div>
 			</Container>
 		</div>
 	);
